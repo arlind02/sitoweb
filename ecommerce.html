@@ -77,6 +77,8 @@
 					<div class="col-md-8">
 						<button onclick="goToCart()" class="btn btn-primary">Vai al carrello</button>
 						<button onclick="clearCart()" class="btn btn-danger">Svuota Carrello</button>
+						<button onclick="goToSito()" class="btn btn-danger">Vai al sito</button>
+
 					</div>
 				</div>
 			</div>
@@ -116,8 +118,12 @@
 		}
 
 		function goToCart() {
-			window.location.href = "carrello";
+			window.location.href = "https://arlind02.github.io/sitoweb/carrello.html";
 		}
+
+		function goToSito() {
+    window.open("https://arlind02.github.io/sitoweb/");
+}
 
 		function clearCart() {
 			localStorage.removeItem("cart");
