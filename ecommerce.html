@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Acquisto prodotti</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style>
+		.container 
+		{
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<h1>Negozio di telefoni</h1>
+
+		<div class="row">
+			<div class="col-md-8">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Marca</th>
+							<th>Modello</th>
+							<th>Prezzo</th>
+							<th>Quantità</th>
+							<th>Aggiungi al carrello</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Nokia</td>
+							<td>3310 </td>
+							<td>2000</td>
+							<td><input type="number" id="quantity10" min="1" value="1"></td>
+							<td><button onclick="addToCart('Nokia', '3310', 2000, 'quantity10')">Aggiungi</button></td>
+						</tr>
+						<tr>
+							<td>Apple</td>
+							<td>iPhone 13</td>
+							<td>899</td>
+							<td><input type="number" id="quantity1" min="1" value="1"></td>
+							<td><button onclick="addToCart('Apple', 'iPhone 13', 899, 'quantity1')">Aggiungi</button></td>
+						</tr>
+						<tr>
+							<td>Samsung</td>
+							<td>Galaxy S21</td>
+							<td>799</td>
+							<td><input type="number" id="quantity2" min="1" value="1"></td>
+							<td><button onclick="addToCart('Samsung', 'Galaxy S21', 799, 'quantity2')">Aggiungi</button></td>
+						</tr>
+						<tr>
+							<td>ASUS</td>
+							<td>ROG Phone 5</td>
+							<td>999</td>
+							<td><input type="number" id="quantity9" min="1" value="1"></td>
+							<td><button onclick="addToCart('ASUS', 'ROG Phone 5', 999, 'quantity9')">Aggiungi</button></td>
+						</tr>						
+						<tr>
+							<td>Motorola</td>
+							<td>Moto G Power</td>
+							<td>249</td>
+							<td><input type="number" id="quantity7" min="1" value="1"></td>
+							<td><button onclick="addToCart('Motorola', 'Moto G Power', 249, 'quantity7')">Aggiungi</button></td>
+						</tr>
+						
+						<tr>
+							<td>Xiaomi</td>
+							<td>Redmi Note 10 Pro</td>
+							<td>329</td>
+							<td><input type="number" id="quantity3" min="1" value="1"></td>
+							<td><button onclick="addToCart('Xiaomi', 'Redmi Note 10 Pro', 329, 'quantity3')">Aggiungi</button></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="row">
+					<div class="col-md-8">
+						<button onclick="goToCart()" class="btn btn-primary">Vai al carrello</button>
+						<button onclick="clearCart()" class="btn btn-danger">Svuota Carrello</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h3>Lista temporanea</h3>
+				<ul id="temporaryList"></ul>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+		
+		function addToCart(marca, modello, prezzo, inputId) {
+        var quantity = document.getElementById(inputId).value;
+        var prezzoIVA = prezzo + (prezzo * 0.22); // Aggiungi l'IVA al prezzo
+        var item = {marca: marca, modello: modello, prezzo: prezzoIVA, quantita: quantity}; // Utilizza il prezzo con IVA
+        cart.push(item);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateTemporaryList(item);
+    }
+
+		function addToCart(marca, modello, prezzo, inputId) {
+			var quantity = document.getElementById(inputId).value;
+			var item = {marca: marca, modello: modello, prezzo: prezzo, quantita: quantity};
+			cart.push(item);
+			localStorage.setItem("cart", JSON.stringify(cart));
+			updateTemporaryList(item);
+		}
+
+		function updateTemporaryList(item) {
+			var temporaryList = document.getElementById("temporaryList");
+			var listItem = document.createElement("li");
+			listItem.innerHTML = item.marca + " " + item.modello + " - " + item.quantita + "x";
+			temporaryList.appendChild(listItem);
+		}
+
+		function goToCart() {
+			window.location.href = "carrello";
+		}
+
+		function clearCart() {
+			localStorage.removeItem("cart");
+			cart = [];
+			var temporaryList = document.getElementById("temporaryList");
+			while (temporaryList.firstChild) {
+				temporaryList.removeChild(temporaryList.firstChild);
+			}
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carrello</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Carrello</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Modello</th>
+            <th>Prezzo</th>
+            <th>Quantità</th>
+            <th>Totale</th>
+        </tr>
+        </thead>
+        <tbody id="cartItems">
+        </tbody>
+    </table>
+
+    <div class="row">
+        <div class="col-md-8">
+            <button onclick="clearCart()" class="btn btn-danger">Svuota Carrello</button>
+			<p><a href="ecommerce">Torna allo shopping</a></p>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    displayCartItems();
+
+    function displayCartItems() {
+        var cartItemsContainer = document.getElementById("cartItems");
+        cartItemsContainer.innerHTML = ""; // Pulisce il contenuto precedente del carrello
+
+        var totalAmount = 0;
+
+        for (var i = 0; i < cart.length; i++) {
+            var item = cart[i];
+            var prezzoIVA = item.prezzo * 1.22; // Calcola il prezzo con IVA
+
+            var row = document.createElement("tr");
+            row.innerHTML = "<td>" + item.marca + "</td>" +
+                            "<td>" + item.modello + "</td>" +
+                            "<td>" + prezzoIVA.toFixed(2) + "</td>" +
+                            "<td>" + item.quantita + "</td>" +
+                            "<td>" + (prezzoIVA * item.quantita).toFixed(2) + "</td>";
+
+            cartItemsContainer.appendChild(row);
+
+            totalAmount += prezzoIVA * item.quantita;
+        }
+
+        // Aggiungi riga per il totale
+        var totalRow = document.createElement("tr");
+        totalRow.innerHTML = "<td colspan='4'><strong>Totale:</strong></td>" +
+                             "<td><strong>" + totalAmount.toFixed(2) + "</strong></td>";
+        cartItemsContainer.appendChild(totalRow);
+    }
+
+    function clearCart() {
+        localStorage.removeItem("cart");
+        cart = [];
+        displayCartItems(); // Aggiorna la visualizzazione del carrello
+    }
+</script>
+
+</body>
+</html>

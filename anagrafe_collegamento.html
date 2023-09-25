@@ -1,0 +1,85 @@
+<!-- File index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anagrafica Web</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+    background-color: rgb(102, 103, 109);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: rgb(102, 103, 109);
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Anagrafica Web</h1>
+  </header>
+  <section>
+    <h2>Dati utente</h2>
+    <table>
+      <tr>
+        <th>Nome</th>
+        <td><span id="name"></span></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><span id="email"></span></td>
+      </tr>
+      <tr>
+        <th>Telefono</th>
+        <td><span id="phone"></span></td>
+      </tr>
+    </table>
+  </section>
+  
+  <script>
+    // Recupera i dati memorizzati dal localStorage del browser
+    var user = localStorage.getItem("user");
+    if (user) {
+      user = user.split(",");
+      document.getElementById("name").textContent = user[0].split(":")[1].replace(/"/g, "").trim();
+      document.getElementById("email").textContent = user[1].split(":")[1].replace(/"/g, "").trim();
+      document.getElementById("phone").textContent = user[2].split(":")[1].replace(/"/g, "").trim();
+    }
+  </script>
+</body>
+</html>  

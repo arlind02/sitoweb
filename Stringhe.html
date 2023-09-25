@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Replace String</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      form {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+      }
+
+      label {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      button {
+        background-color: #777777;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+
+      button:hover {
+        background-color: #3e8e41;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-top: 20px;
+      }
+
+      strong {
+        font-weight: bold;
+        color: #000000;
+      }
+    </style>
+  </head>
+<script>
+      function replaceString() {
+        // Legge i valori dei campi di input
+        var stringaComplessa = document.getElementById("stringa-complessa").value;
+        var parteDaSostituire = document.getElementById("parte-da-sostituire").value;
+        var nuovaParte = document.getElementById("nuova-parte").value;
+
+        // Sostituisce la parte della stringa con la nuova
+        function replaceString() {
+  // Legge i valori dei campi di input
+  var stringaComplessa = document.getElementById("stringa-complessa").value;
+  var parteDaSostituire = document.getElementById("parte-da-sostituire").value;
+  var nuovaParte = document.getElementById("nuova-parte").value;
+
+  // Sostituisce la parte della stringa con la nuova
+  var nuovaStringa = stringaComplessa.replace(parteDaSostituire, nuovaParte);
+
+  // Mostra il risultato
+  var risultatoElement = document.getElementById("risultato");
+  risultatoElement.textContent = nuovaStringa;
+}
+var nuovaStringa = stringaComplessa.replace(parteDaSostituire, nuovaParte);
+    // Aggiorna il risultato nella pagina
+    document.getElementById("risultato").textContent = nuovaStringa;
+  }
+</script>
+  <body>
+    <div class="container">
+      <h1>Replace String</h1>
+      <form>
+        <label for="stringa-complessa">Inserisci una stringa complessa:</label>
+        <input type="text" id="stringa-complessa" />
+
+        <label for="parte-da-sostituire">Inserisci la parte della stringa da sostituire:</label>
+        <input type="text" id="parte-da-sostituire" />
+
+        <label for="nuova-parte">Inserisci la nuova parte:</label>
+        <input type="text" id="nuova-parte" />
+
+        <button type="button" onclick="replaceString()">Replace</button>
+
+        <label for="risultato">Risultato:</label>
+        <p><strong id="risultato"></strong></p>
+      </form>
+    </div>
+
+    
+</body>
+</html>

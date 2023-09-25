@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tabella di numeri casuali</title>
+    <style>
+		/* Stili globali */
+		* {
+			box-sizing: border-box;
+			font-family: Arial, sans-serif;
+		}
+		/* Stili per il titolo della pagina */
+		.title {
+			font-size: 2rem;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 2rem;
+		}
+		/* Stili per la tabella */
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			border: 1px solid black;
+			padding: 8px;
+			text-align: center;
+		}
+		th {
+			background-color: #dddddd;
+		}
+		/* Stili per la sezione di colorazione dei numeri */
+		form {
+			margin-top: 16px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+		input[type="radio"] {
+			margin: 8px;
+		}
+		/* Stili per il pulsante di aggiornamento della tabella */
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 0.5rem 1rem;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+			font-size: 1rem;
+			margin-top: 16px;
+		}
+	</style>
+	<script>
+		function coloraNumeri(numero) {
+			var tabella = document.getElementById("tabella");
+			var righe = tabella.getElementsByTagName("tr");
+			for (var i = 0; i < righe.length; i++) {
+				var celle = righe[i].getElementsByTagName("td");
+				for (var j = 0; j < celle.length; j++) {
+					var valore = parseInt(celle[j].innerHTML);
+					if (valore % numero == 0) {
+						celle[j].style.backgroundColor = "red";
+					} else {
+						celle[j].style.backgroundColor = "";
+					}
+				}
+			}
+		}
+		function generaTabella() {
+			var tabella = document.getElementById("tabella");
+			for (var i = 0; i < 10; i++) {
+				var riga = tabella.insertRow();
+				for (var j = 0; j < 10; j++) {
+					var cella = riga.insertCell();
+					var numero = Math.floor(Math.random() * 100) + 1;
+					cella.innerHTML = numero;
+				}
+			}
+		}
+		function aggiornaTabella() {
+			var tabella = document.getElementById("tabella");
+			while (tabella.rows.length > 0) {
+				tabella.deleteRow(0);
+			}
+			generaTabella();
+		}
+	</script>
+</head>
+<body onload="generaTabella()">
+	<h1>Tabella di numeri casuali</h1>
+	<table id="tabella">
+	</table>
+	<p>Colora i numeri divisibili per:</p>
+	<form>
+		<input type="radio" name="divisore" value="2" onclick="coloraNumeri(2)">2<br>
+		<input type="radio" name="divisore" value="3" onclick="coloraNumeri(3)">3<br>
+		<input type="radio" name="divisore" value="4" onclick="coloraNumeri(4)">4<br>
+		<input type="radio" name="divisore" value="5" onclick="coloraNumeri(5)">5<br>
+		<input type="radio" name="divisore" value="6" onclick="coloraNumeri(6)">6<br>
+		<input type="radio" name="divisore" value="7" onclick="coloraNumeri(7)">7<br>
+		<input type="radio" name="divisore" value="8" onclick="coloraNumeri(8)">8<br>
+		<input type="radio" name="divisore" value="9" onclick="coloraNumeri(9)">9<br>
+	</form>
+	<button onclick="aggiornaTabella()">Aggiorna numeri</button>
+</body>
+</html>

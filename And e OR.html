@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Confronto numeri con operatori logici Bitwise</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }  
+      
+      h1 {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      form {
+        max-width: 300px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+      }
+
+      label {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      input[type="number"] {
+        width: 80%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+
+      button:hover {
+        background-color: #3e8e41;
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+<script>
+      function decimaleToBinario(numero) {
+        return (numero >>> 0).toString(2);
+      }
+
+      function confronta() {
+        var numero1 = document.getElementById("numero-1").value;
+        var numero2 = document.getElementById("numero-2").value;
+        var risultati = "";
+
+        // Converto i numeri decimali in binario
+        var binario1 = decimaleToBinario(numero1);
+        var binario2 = decimaleToBinario(numero2);
+
+        // Eseguo il confronto Bitwise and e Bitwise or sui numeri binari
+        var and = (numero1 & numero2).toString(2);
+        var or = (numero1 | numero2).toString(2);
+
+        // Creo una stringa con i risultati
+        risultati += "Numero 1 in binario:" + binario1 + "<br/>";
+risultati += "Numero 2 in binario: " + binario2 + "<br/>";
+risultati += "Confronto Bitwise and: " + and + "<br/>";
+risultati += "Confronto Bitwise or: " + or + "<br/>";
+    // Aggiorno l'elemento HTML con i risultati
+    document.getElementById("risultati").innerHTML = risultati;
+  }
+</script>
+  <body>
+    <form>
+      <label for="numero-1">Inserisci il primo numero decimale:</label>
+      <input type="number" id="numero-1" />
+    
+      <label for="numero-2">Inserisci il secondo numero decimale:</label>
+      <input type="number" id="numero-2" />
+    
+      <button type="button" onclick="confronta()">Confronta</button>
+    </form>
+    
+    <p id="risultati"></p>
+    
+    
+</body>
+</html>

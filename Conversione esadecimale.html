@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Convertitore decimale-esadecimale</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f5f5f5;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		label {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+		input[type="number"] {
+			font-size: 16px;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+			width: 200px;
+			margin-bottom: 20px;
+		}
+		button {
+			font-size: 18px;
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #3E8E41;
+		}
+		#output {
+			font-size: 18px;
+			text-align: center;
+			margin-top: 20px;
+			margin-bottom: 50px;
+		}
+	</style>
+</head>
+<script>
+		function converti() {
+			var decimale = parseInt(document.getElementById("decimale").value);
+			if (isNaN(decimale)) {
+				document.getElementById("output").innerHTML = "Il valore inserito non è valido. Riprova.";
+				return;
+			}
+			var esadecimale = decimale.toString(16);
+			document.getElementById("output").innerHTML = "Il numero esadecimale corrispondente a " + decimale + " è " + esadecimale.toUpperCase() + ".";
+		}
+	</script>
+<body>
+	
+	<form onsubmit="return false;">
+		<label for="decimale">Inserisci il numero decimale:</label>
+		<input type="number" id="decimale">
+		<button onclick="converti()">Converti</button>
+	</form>
+	<div id="output"></div>
+
+	
+</body>
+</html>

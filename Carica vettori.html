@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Caricamento vettore</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		h1 {
+			margin-top: 0;
+		}
+
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			margin-right: 10px;
+		}
+
+		button:hover {
+			background-color: #3e8e41;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		input[type="text"] {
+			padding: 10px;
+			border-radius: 4px;
+			border: 1px solid #ccc;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			margin-top: 10px;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+
+		.risultati {
+			margin-top: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+
+		.risultati p {
+			margin: 0;
+		}
+	</style>
+</head>
+<script>
+		let vettore = [];
+
+		function caricaCasuale() {
+			vettore = [];
+			for (let i = 0; i < 10; i++) {
+				vettore.push(Math.floor(Math.random() * 100));
+			}
+			aggiornaRisultati();
+		}
+
+		function caricaUtente() {
+			let formCaricamento = document.querySelector(".caricamento");
+			formCaricamento.reset();
+			form
+		}
+
+function ordinaVettore() {
+    let inputVettore = document.querySelector("#vettore");
+    vettore = inputVettore.value.split(",").map(Number).filter(Boolean);
+    vettore.sort(function(a, b){return a-b});
+    aggiornaRisultati();
+}
+
+function aggiornaRisultati() {
+    let spanVettore = document.querySelector("#vettore-ordinato");
+    spanVettore.textContent = vettore.join(", ");
+    let spanMassimo = document.querySelector("#massimo");
+    spanMassimo.textContent = Math.max(...vettore);
+    let spanMinimo = document.querySelector("#minimo");
+    spanMinimo.textContent = Math.min(...vettore);
+}
+</script>
+<body>
+	<div class="container">
+		
+		<p>Scegli come caricare il vettore:</p>
+		<button onclick="caricaCasuale()">Caricamento casuale</button>
+		<button onclick="caricaUtente()">Caricamento da utente</button>
+
+		<form class="caricamento" onsubmit="event.preventDefault(); ordinaVettore()">
+			<label for="vettore">Inserisci i valori del vettore separati da virgola:</label>
+			<input type="text" id="vettore" name="vettore" required>
+			<input type="submit" value="Ordina">
+		</form>
+
+		<div class="risultati">
+			<p>Vettore: <span id="vettore-ordinato"></span></p>
+			<p>Massimo: <span id="massimo"></span></p>
+			<p>Minimo: <span id="minimo"></span></p>
+		</div>
+	</div>
+
+	
+</body>
+</html>
