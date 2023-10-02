@@ -1,86 +1,142 @@
-body {
-    font-family: "Century Gothic", 'Lato', sans-serif;
-}
-
-a {
-    text-decoration: none;
-}
-
-.et-hero-tabs,
-.et-slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    background: #eee;
-    text-align: center;
-    padding: 0 2em;
-    h1 {
-        font-size: 2rem;
-        margin: 0;
-        letter-spacing: 1rem;
-    }
-    h3 {
-        font-size: 1rem;
-        letter-spacing: 0.3rem;
-        opacity: 0.6;
-    }
-}
-
-.et-hero-tabs-container {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    bottom: 0;
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.4;
+  }
+  
+  body {
+    padding: 20px 15%;
+    background: #3c889b;
+  }
+  
+  form {
+    background: white;
+  }
+  
+  form:focus-within {
+    background: #f9f98b;
+  }
+  
+  form header {
+    padding: 2rem;
+  }
+  
+  form header div {
+    font-size: 90%;
+    color: #999;
+  }
+  
+  form header h2 {
+    margin: 0 0 5px 0;
+  }
+  
+  form > div {
+    clear: both;
+    overflow: hidden;
+    padding: 0.5rem 2rem;
+  }
+  
+  form > div:last-child {
+    padding-bottom: 2rem;
+  }
+  
+  form > div:focus-within {
+    background: #a1c084;
+  }
+  
+  form > div > fieldset > div > div {
+    margin: 0 0 5px 0;
+  }
+  
+  form > div > label,
+  legend {
+    width: 25%;
+    float: left;
+    padding-right: 10px;
+  }
+  
+  form > div > div,
+  form > div > fieldset > div {
+    width: 75%;
+    float: right;
+  }
+  .center-box {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 6px;
+  }
+  
+  
+  form > div > fieldset label {
+    font-size: 90%;
+  }
+  
+  fieldset {
+    border: 0;
+    padding: 0;
+  }
+  
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=password],
+  textarea {
     width: 100%;
-    height: 70px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    z-index: 10;
-    &--top {
-        position: fixed;
-        top: 0;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+  
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=password] {
+    width: 50%;
+  }
+  
+  input[type=text]:focus,
+  input[type=email]:focus,
+  input[type=url]:focus,
+  input[type=password]:focus,
+  textarea:focus {
+    outline: 0;
+    border-color: #4697e4;
+  }
+  
+  @media (max-width: 600px) {
+    form > div > label,
+    legend {
+      width: 100%;
+      float: none;
+      margin: 0 0 5px 0;
     }
-}
-
-.et-hero-tab {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    color: #000;
-    letter-spacing: 0.1rem;
-    transition: all 0.5s ease;
-    font-size: 0.8rem;
-    &:hover {
-        color: white;
-        background: rgba(102, 177, 241, 0.8);
-        transition: all 0.5s ease;
+    form > div > div,
+    form > div > fieldset > div {
+      width: 100%;
+      float: none;
     }
-}
-
-.et-hero-tab-slider {
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 6px;
-    background: #66B1F1;
-    transition: left 0.3s ease;
-}
-
-@media (min-width: 800px) {
-    .et-hero-tabs,
-    .et-slide {
-        h1 {
-            font-size: 3rem;
-        }
-        h3 {
-            font-size: 1rem;
-        }
+    input[type=text],
+    input[type=email],
+    input[type=url],
+    input[type=password],
+    textarea,
+    select {
+      width: 100%; 
     }
-    .et-hero-tab {
-        font-size: 1rem;
+  }
+  
+  @media (min-width: 1200px) {
+    form > div > label,
+    legend {
+      text-align: right;
     }
-}
+  }
+  
