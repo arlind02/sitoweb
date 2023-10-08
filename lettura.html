@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizzazione Macchine Mercedes-Benz</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #fff;
+            font-size: 36px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #111;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #444;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #222;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #333;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        .car-image {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Macchine Mercedes-Benz</h1>
+    <div id="tableContainer"></div>
+
+    <script>
+        function loadCSV() {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const contents = xhr.responseText;
+                    const lines = contents.split('\n');
+                    const table = document.createElement('table');
+
+                    for (let i = 0; i < lines.length; i++) {
+                        const row = document.createElement('tr');
+                        const cells = lines[i].split(',');
+
+                        for (let j = 0; j < cells.length; j++) {
+                            const cell = i === 0 ? document.createElement('th') : document.createElement('td');
+                            cell.textContent = cells[j];
+                            row.appendChild(cell);
+                        }
+
+                        table.appendChild(row);
+                    }
+
+                    document.getElementById('tableContainer').innerHTML = '';
+                    document.getElementById('tableContainer').appendChild(table);
+                }
+            };
+
+            xhr.open('GET', 'mercedes.csv', true);
+            xhr.send();
+        }
+
+        loadCSV();
+    </script>
+</body>
+</html>
