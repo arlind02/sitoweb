@@ -1,105 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Leggi e Traduci CSV in Tabella HTML</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .header {
-            background-color: #000;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .header h1 {
-            color: #fff;
-            font-size: 36px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #111;
-            border: 1px solid #333;
-            border-radius: 5px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table, th, td {
-            border: 1px solid #444;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #222;
-            color: #fff;
-        }
-
-        tr:nth-child(even) {
-            background-color: #333;
-        }
-
-        .image-container {
-            text-align: center;
-        }
-
-        .car-image {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+    <title>Leggi e traduci CSV in tabella HTML</title>
 </head>
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        background-color: #000;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .header h1 {
+        color: #fff;
+        font-size: 36px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #111;
+        border: 1px solid #333;
+        border-radius: 5px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    table, th, td {
+        border: 1px solid #444;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #222;
+        color: #fff;
+    }
+
+    tr:nth-child(even) {
+        background-color: #333;
+    }
+
+    .image-container {
+        text-align: center;
+    }
+
+    .car-image {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
 <body>
-    <h1>Tabella CSV</h1>
+    <button id="CaricaCSV" onclick="CaricaCSV()">Carica CSV</button>
     <div id="tableContainer"></div>
-    <button onclick="loadCSV()">Carica CSV</button>
 
     <script>
-        function loadCSV() {
-            const xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    const contents = xhr.responseText;
-                    const lines = contents.split('\n');
-                    const table = document.createElement('table');
+        function CaricaCSV() {
+            const tabella = document.getElementById("tableContainer");
 
-                    for (let i = 0; i < lines.length; i++) {
-                        const row = document.createElement('tr');
-                        const cells = lines[i].split(',');
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "https://arlind02.github.io/sitoweb/mercedes.csv", true);
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState === 4 && xhttp.status === 200) {
+                    const text = xhttp.responseText;
+                    const csvLines = text.split("\n");
+                    let tableHTML = "<table>";
 
-                        for (let j = 0; j < cells.length; j++) {
-                            const cell = i === 0 ? document.createElement('th') : document.createElement('td');
-                            cell.textContent = cells[j];
-                            row.appendChild(cell);
+                    for (let i = 0; i < csvLines.length; i++) {
+                        const riga = csvLines[i].split(",");
+                        tableHTML += "<tr>";
+
+                        for (let j = 0; j < riga.length; j++) {
+                            tableHTML += "<td>" + riga[j] + "</td>";
                         }
 
-                        table.appendChild(row);
+                        tableHTML += "</tr>";
                     }
 
-                    document.getElementById('tableContainer').innerHTML = '';
-                    document.getElementById('tableContainer').appendChild(table);
+                    tableHTML += "</table>";
+                    tableContainer.innerHTML = tableHTML;
                 }
             };
-
-            xhr.open('GET', 'https://arlind02.github.io/sitoweb/mercedes.csv', true);
-            xhr.send();
-        }
+            xhttp.send();
+        };
     </script>
 </body>
 </html>
