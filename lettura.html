@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="it">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizzazione Macchine Mercedes-Benz</title>
+    <title>Leggi e Traduci CSV in Tabella HTML</title>
     <style>
         body {
             background-color: #000;
@@ -68,8 +66,9 @@
     </style>
 </head>
 <body>
-    <h1>Macchine Mercedes-Benz</h1>
+    <h1>Tabella CSV</h1>
     <div id="tableContainer"></div>
+    <button onclick="loadCSV()">Carica CSV</button>
 
     <script>
         function loadCSV() {
@@ -98,11 +97,9 @@
                 }
             };
 
-            xhr.open('GET', 'mercedes.csv', true);
+            xhr.open('GET', 'https://arlind02.github.io/sitoweb/mercedes.csv', true);
             xhr.send();
         }
-
-        loadCSV();
     </script>
 </body>
 </html>
