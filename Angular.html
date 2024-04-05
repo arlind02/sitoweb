@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+<body ng-app="myApp">
+
+<p><a href="#!">Main</a></p>
+<a href="#!Classe2D">Classe 2D</a>
+<a href="#!Classe3D">Classe 3D</a>
+<a href="#!Classe4D">Classe 4D</a>
+
+<p>Clicca i link, oguno apre una classe!</p>
+
+<div ng-view></div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "angular.html",
+    })
+    .when("/Classe2D", {
+        templateUrl : "Classe2D.html",
+        controller : "studenti2D"
+    })
+    .when("/Classe3D", {
+        templateUrl : "Classe3D.html",
+        controller : "studenti3D"
+    })
+    .when("/Classe4D", {
+        templateUrl : "Classe4D.html",
+        controller : "studenti4D"
+    })
+    .otherwise({
+        redirectTo: '/'
+    });
+});
+
+app.controller("studenti2D", function ($scope, $http) {
+    $http.get("2D.json")
+    .then(function (response) {
+        $scope.names = response.data;
+    });
+});
+
+app.controller("studenti3D", function ($scope, $http) {
+    $http.get("3D.json")
+    .then(function (response) {
+        $scope.names = response.data;
+    });
+});
+
+app.controller("studenti4D", function ($scope, $http) {
+    $http.get("4D.json")
+    .then(function (response) {
+        $scope.names = response.data;
+    });
+});
+</script>
+
+</body>
+</html>
