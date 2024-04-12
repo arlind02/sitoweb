@@ -43,7 +43,7 @@ app.config(function($routeProvider) {
 app.controller("studenti2D", function ($scope, $http) {
     $http.get("2D.json")
     .then(function (response) {
-        $scope.nome = response.data;
+        $scope.names = response.data;
     });
 });
 
