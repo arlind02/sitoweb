@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
 <body ng-app="myApp">
 
@@ -42,7 +43,7 @@ app.config(function($routeProvider) {
 app.controller("studenti2D", function ($scope, $http) {
     $http.get("2D.json")
     .then(function (response) {
-        $scope.names = response.data;
+        $scope.nome = response.data;
     });
 });
 
