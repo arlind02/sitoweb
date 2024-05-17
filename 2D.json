@@ -1,66 +1,62 @@
-{
-    "data":
-
 [
   {
-      "nome": "Marco",
-      "cognome": "Rossi",
-      "età": 15,
-      "regione": "Lombardia"
+    "Name": "Marco",
+    "Surname": "Rossi",
+    "Country": "Italia",
+    "age": 16
   },
   {
-      "nome": "Luca",
-      "cognome": "Bianchi",
-      "età": 15,
-      "regione": "Lombardia"
+    "Name": "Francesca",
+    "Surname": "Bianchi",
+    "Country": "Italia",
+    "age": 16
   },
   {
-      "nome": "Alessia",
-      "cognome": "Verdi",
-      "età": 15,
-      "regione": "Lombardia"
+    "Name": "Alessandro",
+    "Surname": "Ferrari",
+    "Country": "Italia",
+    "age": 15
   },
   {
-      "nome": "Sara",
-      "cognome": "Romano",
-      "età": 15,
-      "regione": "Lombardia"
+    "Name": "Sara",
+    "Surname": "Russo",
+    "Country": "Italia",
+    "age": 16
   },
   {
-      "nome": "Simone",
-      "cognome": "Ferrari",
-      "età": 15,
-      "regione": "Lombardia"
+    "Name": "Matteo",
+    "Surname": "Esposito",
+    "Country": "Italia",
+    "age": 17
   },
   {
-      "nome": "Elisa",
-      "cognome": "Esposito",
-      "età": 15,
-      "regione": "Lombardia"
+    "Name": "Giulia",
+    "Surname": "Colombo",
+    "Country": "Italia",
+    "age": 16
   },
   {
-      "nome": "Giovanni",
-      "cognome": "Galli",
-      "età": 15,
-      "regione": "Lombardia"
+    "Name": "Lorenzo",
+    "Surname": "Greco",
+    "Country": "Italia",
+    "age": 15
   },
   {
-      "nome": "Chiara",
-      "cognome": "Moretti",
-      "età": 15,
-      "regione": "Lombardia"
+    "Name": "Chiara",
+    "Surname": "Marino",
+    "Country": "Italia",
+    "age": 17
   },
   {
-      "nome": "Francesco",
-      "cognome": "Russo",
-      "età": 15,
-      "regione": "Lombardia"
+    "Name": "Davide",
+    "Surname": "Conti",
+    "Country": "Italia",
+    "age": 15
   },
   {
-      "nome": "Elena",
-      "cognome": "Colombo",
-      "età": 15,
-      "regione": "Lombardia"
+    "Name": "Valentina",
+    "Surname": "Galli",
+    "Country": "Italia",
+    "age": 16
   }
 ]
-}

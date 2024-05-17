@@ -1,62 +1,62 @@
 [
   {
-      "nome": "Marco",
-      "cognome": "Rossi",
-      "età": 17,
-      "regione": "Lombardia"
+    "Name": "Matteo",
+    "Surname": "Sanna",
+    "Country": "Italia",
+    "age": 18
   },
   {
-      "nome": "Luca",
-      "cognome": "Bianchi",
-      "età": 17,
-      "regione": "Lombardia"
+    "Name": "Elena",
+    "Surname": "Villa",
+    "Country": "Italia",
+    "age": 18
   },
   {
-      "nome": "Alessia",
-      "cognome": "Verdi",
-      "età": 17,
-      "regione": "Lombardia"
+    "Name": "Giacomo",
+    "Surname": "Caruso",
+    "Country": "Italia",
+    "age": 17
   },
   {
-      "nome": "Sara",
-      "cognome": "Romano",
-      "età": 17,
-      "regione": "Lombardia"
+    "Name": "Claudia",
+    "Surname": "Ferrari",
+    "Country": "Italia",
+    "age": 19
   },
   {
-      "nome": "Simone",
-      "cognome": "Ferrari",
-      "età": 17,
-      "regione": "Lombardia"
+    "Name": "Luca",
+    "Surname": "Ricci",
+    "Country": "Italia",
+    "age": 18
   },
   {
-      "nome": "Elisa",
-      "cognome": "Esposito",
-      "età": 17,
-      "regione": "Lombardia"
+    "Name": "Alessia",
+    "Surname": "Mariani",
+    "Country": "Italia",
+    "age": 17
   },
   {
-      "nome": "Giovanni",
-      "cognome": "Galli",
-      "età": 17,
-      "regione": "Lombardia"
+    "Name": "Federico",
+    "Surname": "Rizzo",
+    "Country": "Italia",
+    "age": 19
   },
   {
-      "nome": "Chiara",
-      "cognome": "Moretti",
-      "età": 17,
-      "regione": "Lombardia"
+    "Name": "Sofia",
+    "Surname": "Romano",
+    "Country": "Italia",
+    "age": 17
   },
   {
-      "nome": "Francesco",
-      "cognome": "Russo",
-      "età": 17,
-      "regione": "Lombardia"
+    "Name": "Gabriele",
+    "Surname": "Moretti",
+    "Country": "Italia",
+    "age": 18
   },
   {
-      "nome": "Elena",
-      "cognome": "Colombo",
-      "età": 17,
-      "regione": "Lombardia"
+    "Name": "Veronica",
+    "Surname": "Monti",
+    "Country": "Italia",
+    "age": 17
   }
 ]

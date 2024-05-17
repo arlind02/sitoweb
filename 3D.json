@@ -1,62 +1,62 @@
 [
   {
-      "nome": "Marco",
-      "cognome": "Rossi",
-      "età": 16,
-      "regione": "Lombardia"
+    "Name": "Andrea",
+    "Surname": "Barbieri",
+    "Country": "Italia",
+    "age": 17
   },
   {
-      "nome": "Luca",
-      "cognome": "Bianchi",
-      "età": 16,
-      "regione": "Lombardia"
+    "Name": "Laura",
+    "Surname": "Costa",
+    "Country": "Italia",
+    "age": 17
   },
   {
-      "nome": "Alessia",
-      "cognome": "Verdi",
-      "età": 16,
-      "regione": "Lombardia"
+    "Name": "Luca",
+    "Surname": "Gentile",
+    "Country": "Italia",
+    "age": 16
   },
   {
-      "nome": "Sara",
-      "cognome": "Romano",
-      "età": 16,
-      "regione": "Lombardia"
+    "Name": "Elisa",
+    "Surname": "Leone",
+    "Country": "Italia",
+    "age": 18
   },
   {
-      "nome": "Simone",
-      "cognome": "Ferrari",
-      "età": 16,
-      "regione": "Lombardia"
+    "Name": "Simone",
+    "Surname": "Mancini",
+    "Country": "Italia",
+    "age": 17
   },
   {
-      "nome": "Elisa",
-      "cognome": "Esposito",
-      "età": 16,
-      "regione": "Lombardia"
+    "Name": "Martina",
+    "Surname": "Rizzo",
+    "Country": "Italia",
+    "age": 16
   },
   {
-      "nome": "Giovanni",
-      "cognome": "Galli",
-      "età": 16,
-      "regione": "Lombardia"
+    "Name": "Daniele",
+    "Surname": "Santoro",
+    "Country": "Italia",
+    "age": 18
   },
   {
-      "nome": "Chiara",
-      "cognome": "Moretti",
-      "età": 16,
-      "regione": "Lombardia"
+    "Name": "Valeria",
+    "Surname": "Vitali",
+    "Country": "Italia",
+    "age": 16
   },
   {
-      "nome": "Francesco",
-      "cognome": "Russo",
-      "età": 16,
-      "regione": "Lombardia"
+    "Name": "Marco",
+    "Surname": "Galli",
+    "Country": "Italia",
+    "age": 17
   },
   {
-      "nome": "Elena",
-      "cognome": "Colombo",
-      "età": 16,
-      "regione": "Lombardia"
+    "Name": "Giorgia",
+    "Surname": "Ferrara",
+    "Country": "Italia",
+    "age": 16
   }
 ]
